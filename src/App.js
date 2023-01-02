@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+ import React from 'react';
+ import Navber from "./Compantnets/Navber/Navber";
+ import Products from "./Compantnets/Products/Products";
+ import Cart from "./Compantnets/Cart/Cart";
+ import Singleitem from "./Compantnets/Singleitem/singitem";
+ import { BrowserRouter as Router , Route , Switch ,Redirect} from "react-router-dom";
+ import { connect} from "react-redux"
+function App({ currentItem }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Navber />
+      <Switch>
+        <Route exact path='/' component={Products} />
+        <Route path='/cart' component={Cart} />
+      
+        {!currentItem ? (
+          <Redirect to='/' />
+        ) : (
+          <Route path='/product/:id' component={Singleitem} />
+        )}
+      </Switch>
+    </Router>
+  )
 }
-
-export default App;
+const LoadAllSite = (state) => {
+  return {
+    currentItem: state.shop.currentItem,
+    
+  }
+}
+ 
+export default connect(LoadAllSite)(App);

@@ -1,0 +1,77 @@
+.Product{
+   margin: 1rem;
+}
+.btn_one{
+background-color: #b20000 !important;
+
+}
+.btn_two{
+background-color: gray !important;
+font-size: 1rem !important;
+}
+.Product .link{
+    text-decoration: none;
+    color: black;
+}
+.products{
+max-width: 1200px;
+height: 100%;
+margin: 0px auto;
+}
+@media (max-width:1199px) {
+    .products {
+        max-width: 1000px;
+    }
+}
+@media (max-width:899px) {
+    .products {
+        max-width: 700px;
+    }
+}
+@media (max-width:599px) {
+    .products {
+        max-width: 340px;
+    }
+}
+ 
+@media (max-width:290px) {
+    .btn_one{
+        font-size: .7rem !important;
+        
+    }
+    .btn_two{
+        font-size: .7rem !important;
+    }
+    .groupButton{
+       
+        margin:0px 1rem;
+    }
+}
+@media (max-width:290px){
+    .groupButton {
+            margin: 0px .5rem;
+        }
+}
+@media (max-width:290px) {
+    .groupButton {
+        margin: 0px .2rem;
+    }
+}
+@media (max-width:244px) {
+    .groupButton {
+        margin: 0px;
+    }
+}
+@media (max-width:237px) {
+    .groupButton {
+        margin: 0px;
+    }
+.btn_one {
+    font-size: .5rem !important;
+
+}
+
+.btn_two {
+    font-size: .5rem !important;
+}
+}
